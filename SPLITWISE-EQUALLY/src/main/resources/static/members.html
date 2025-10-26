@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title id="group-title">Group Details</title>
+  <link rel="stylesheet" href="members.css" />
+</head>
+<body>
+<div class="container">
+  <h1 id="group-name-display"></h1>
+  <div class="summary-section">
+    <span id="totalDisplay" class="summary-item total"></span>
+    <span id="averageDisplay" class="summary-item average"></span>
+    <button id="deleteGroupBtn">Delete Group</button>
+    <a href="group.html" class="back-link">← Back to Groups</a>
+  </div>
+
+  <h3>Group Members & Balances</h3>
+  <table id="membersTable">
+    <thead>
+    <tr>
+      <th>User ID</th>
+      <th>Name</th>
+      <th>Net Balance (₹)</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+
+  <div class="add-member-section">
+    <h3>Add New Member</h3>
+    <input type="text" id="addUserId" placeholder="New Member User ID (from their login)">
+    <button onclick="addMember()">Add Member</button>
+  </div>
+
+  <hr>
+
+  <div class="settlement-section">
+    <h2>Settlement Plan</h2>
+    <div id="settlement-transactions">
+      <p>Loading minimal transactions...</p>
+    </div>
+  </div>
+  <p id="group-msg" class="message-area"></p>
+</div>
+
+<script src="members.js"></script>
+</body>
+</html>
