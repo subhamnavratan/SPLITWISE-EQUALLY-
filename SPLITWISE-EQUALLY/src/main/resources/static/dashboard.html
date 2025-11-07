@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Groups</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header-row">
+        <h2>Your Groups</h2>
+        <button class="create-btn" onclick="openCreateModal()">+ Create Group</button>
+    </div>
+
+    <div id="groupList" class="group-list"></div>
+
+</div>
+
+<!-- Modal -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <h3>Create New Group</h3>
+        <input type="text" id="groupNameInput" placeholder="Enter group name">
+        <div class="modal-actions">
+            <button class="cancel-btn" onclick="closeModal()">Cancel</button>
+            <button class="confirm-btn" onclick="createGroup()">Create</button>
+        </div>
+    </div>
+</div>
+
+<script src="js/dashboard.js"></script>
+</body>
+</html>
+
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <h3>Create New Group</h3>
+
+        <input type="text" id="groupNameInput" placeholder="Enter group name">
+
+        <div class="modal-actions">
+            <button class="cancel-btn" onclick="closeModal()">Cancel</button>
+            <button class="confirm-btn" onclick="createGr

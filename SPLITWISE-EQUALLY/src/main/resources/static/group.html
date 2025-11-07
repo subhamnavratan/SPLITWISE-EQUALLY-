@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Group Details</title>
+  <link rel="stylesheet" href="css/group.css">
+</head>
+<body>
+
+<div class="group-container">
+
+  <!-- HEADER -->
+  <div class="header-row">
+    <h2 id="groupTitle"></h2>
+    <button id="deleteGroupBtn" class="delete-btn" onclick="deleteGroup()">Delete Group</button>
+  </div>
+
+  <!-- MEMBERS LIST -->
+  <h3 class="section-title">Members</h3>
+  <div id="membersArea" class="members-list"></div>
+
+  <!-- SUMMARY BUTTONS -->
+  <div class="actions-section">
+    <button class="action-btn" onclick="getTotal()">Total Amount</button>
+    <button class="action-btn" onclick="simplify()">Simplify Balances</button>
+  </div>
+
+  <div id="summaryOutput" class="summary-box"></div>
+
+</div>
+<!-- ADD & REMOVE MEMBER SECTION -->
+<div class="member-manage-section">
+
+  <!-- Add Member -->
+  <div class="manage-box">
+    <h3>Add Member</h3>
+    <input type="number" id="newMemberPhone" placeholder="Enter 10-digit phone number">
+    <button class="manage-btn" onclick="addMember()">Add Member</button>
+  </div>
+
+  <!-- Remove Member -->
+  <div class="manage-box">
+    <h3>Remove Member</h3>
+    <input type="number" id="removeMemberPhone" placeholder="Enter 10-digit phone number">
+    <button class="manage-btn remove" onclick="removeMember()">Remove Member</button>
+  </div>
+
+</div>
+
+<script src="js/group.js"></script>
+</body>
+</html>

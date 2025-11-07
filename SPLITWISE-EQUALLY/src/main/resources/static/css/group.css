@@ -1,0 +1,176 @@
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background: #ffffff;
+}
+
+.group-container {
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+/* HEADER */
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-row h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #2e7d32;
+}
+
+.delete-btn {
+    background: #d9534f;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+.delete-btn:hover {
+    background: #c9302c;
+}
+
+/* MEMBERS SECTION */
+.section-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 30px;
+    color: #444;
+}
+
+.members-list {
+    margin-top: 15px;
+}
+
+.member-card {
+    background: #f3f3f3;
+    padding: 18px;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Payment history */
+.transaction-history {
+    margin-top: 10px;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.transaction-item {
+    padding: 6px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+/* ADD PAYMENT */
+.add-pay-row {
+    margin-top: 12px;
+    display: flex;
+    gap: 10px;
+}
+
+.add-pay-row input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    flex-grow: 1;
+}
+
+.add-btn {
+    background: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+.add-btn:hover {
+    background: #256b28;
+}
+
+/* SUMMARY BUTTONS */
+.actions-section {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+}
+
+.action-btn {
+    padding: 12px 20px;
+    background: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.action-btn:hover {
+    background: #256b28;
+}
+
+/* SUMMARY OUTPUT */
+.summary-box {
+    margin-top: 20px;
+    background: #eeeeee;
+    padding: 18px;
+    border-radius: 12px;
+    font-size: 16px;
+}
+/* ADD + REMOVE MEMBER SECTION */
+.member-manage-section {
+    margin-top: 25px;
+    display: flex;
+    gap: 20px;
+}
+
+.manage-box {
+    flex: 1;
+    background: #f9f9f9;
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.manage-box h3 {
+    margin: 0 0 10px;
+    color: #2e7d32;
+    font-size: 20px;
+}
+
+.manage-box input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-top: 8px;
+}
+
+.manage-btn {
+    width: 100%;
+    margin-top: 14px;
+    padding: 10px;
+    border: none;
+    background: #2e7d32;
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.manage-btn:hover {
+    background: #256b28;
+}
+
+.manage-btn.remove {
+    background: #c9302c;
+}
+
+.manage-btn.remove:hover {
+    background: #b02222;
+}
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login | Splitwise</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="auth-container">
+    <div class="auth-card">
+        <h2 class="title">Welcome To SplitWise</h2>
+        <p class="subtitle">Login to continue</p>
+
+        <div class="input-group">
+            <label>Phone / Email</label>
+            <input type="text" id="identifier" placeholder="Enter phone or email">
+        </div>
+
+        <div class="input-group">
+            <label>Password</label>
+            <input type="password" id="password" placeholder="Enter password">
+        </div>
+
+        <button class="primary-btn" onclick="login()">Login</button>
+
+        <p class="switch-text">
+            Don't have an account?
+            <a href="signup.html">Signup</a>
+        </p>
+    </div>
+</div>
+
+<script src="js/login.js"></script>
+</body>
+</html>

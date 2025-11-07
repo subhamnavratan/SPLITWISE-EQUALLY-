@@ -5,12 +5,13 @@ import com.Zeta.SPLITWISE.EQUALLY.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import java.util.Map; // REQUIRED: For reading the JSON body during login
+import java.util.Map;
 import java.util.NoSuchElementException;
 
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
+
     private final UserService userService;
 
     @Autowired
@@ -18,7 +19,9 @@ public class UserController {
         this.userService = userService;
     }
 
-    // Registration (Signup) - remains POST /register
+    // ------------------------------------------
+    // REGISTER USER
+    // ------------------------------------------
     @PostMapping("/register")
     public ResponseEntity<User> registerUser(@RequestBody User user) {
         try {
@@ -32,7 +35,9 @@ public class UserController {
         }
     }
 
-    // CRITICAL FIX: Login now uses POST and accepts credentials in the body
+    // ------------------------------------------
+    // LOGIN USER
+    // ------------------------------------------
     @PostMapping("/login")
     public ResponseEntity<User> login(@RequestBody Map<String, String> loginRequest) {
         try {
@@ -43,23 +48,33 @@ public class UserController {
                 throw new IllegalArgumentException("Identifier and password are required.");
             }
 
-            // Call the service with both identifier and password
             User user = userService.login(identifier, password);
-
-            // Success: Clear password before returning the user object
             user.setPassword(null);
+
             return ResponseEntity.ok(user);
 
         } catch (IllegalArgumentException e) {
-            // This catches "Invalid credentials" from the service
             return ResponseEntity.status(401).body(null);
         } catch (NoSuchElementException e) {
-            // User not found
             return ResponseEntity.status(404).body(null);
         } catch (Exception e) {
             return ResponseEntity.status(500).body(null);
         }
     }
 
-    // NOTE: The old @GetMapping("/login/{identifier}") method is removed for security.
+    // ------------------------------------------
+    // ✅ NEW: GET USER BY USER ID (Needed for payments)
+    // ------------------------------------------
+    @GetMapping("/id/{userId}")
+    public ResponseEntity<User> getUserById(@PathVariable String userId) {
+        try {
+            User user = userService.getUserById(userId);
+            user.setPassword(null);
+            return ResponseEntity.ok(user);
+        } catch (NoSuchElementException e) {
+            return ResponseEntity.notFound().build();
+        } catch (Exception e) {
+            return ResponseEntity.status(500).build();
+        }
+    }
 }
